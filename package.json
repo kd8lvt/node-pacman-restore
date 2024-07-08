@@ -1,0 +1,13 @@
+{
+  "name": "node-pacman-restore",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "kd8lvt (https://github.com/kd8lvt)",
+  "license": "ISC",
+  "description": "",
+  "type": "module"
+}
