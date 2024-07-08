@@ -1,8 +1,27 @@
 # node-pacman-restore
 A simple commandline utility to restore pacman packages after a SteamOS (or other immutable root fs) update.  
-Must be run with sudo, because pacman.
+Runs as a NodeJS script, because I can. 
 
-# Usage
+Must be run with root permission (i.e. `sudo`), because it runs `pacman`. What did you expect?  
+# Running on SteamDeck
+There are a few things you'll have to do on your SteamDeck before running `restore`.  
+1. If you haven't already, define a password. You won't have to use it to log in or anything, it's just for using `sudo`.  
+```sh
+passwd
+```
+2. Run the following command to unlock your root filesystem. I'd recommend relocking it after you're done installing things.  
+```sh
+sudo steamos-readonly disable
+sudo steamos-readonly enable
+```
+3. Set up pacman-key  
+```sh
+sudo pacman-key --init
+sudo pacman-key --populate arch
+sudo pacman-key --populate halo
+```
+And that should be it! If you run into issues, let me know with a github issue and I can try to help you out.  
+# Using node-pacman-restore
 
 #### Add
 Installs the package and adds it to the config. If it fails to install, you can simply use `--remove` to delete it from the config.
