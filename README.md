@@ -23,7 +23,7 @@ sudo pacman-key --populate halo
 And that should be it! If you run into issues, let me know with a github issue and I can try to help you out.  
 # Using node-pacman-restore
 
-#### Add
+### Sync
 Installs the package and adds it to the config. If it fails to install, you can simply use `--remove` to delete it from the config.
 ```sh
 #Currently unable to install multiple packages. I might add that later.
@@ -35,7 +35,7 @@ sudo ./restore -s package=package_name_here
 #Pacman Equivalent: `sudo pacman -Syu package_name_here`
 ```
 ---
-#### Remove
+### Remove
 Uninstalls the package and removes it from the config, if present.
 ```sh
 #Again - one package at a time.
@@ -47,7 +47,7 @@ sudo ./restore -r package=package_name_here
 #Pacman Equivalent: `sudo pacman -Ru package_name_here`
 ```
 ---
-#### Restore
+### Restore
 Installs any packages in config.json that are missing.
 ```sh
 sudo ./restore --refresh
@@ -58,7 +58,7 @@ sudo ./restore --refresh
 sudo ./restore -R
 ```
 ---
-#### Verbose
+### Verbose
 Get verbose wrapper output (not verbose pacman output. I should add that...)
 ```sh
 #Combine with one of the three operations above
@@ -68,7 +68,7 @@ sudo ./restore --verbose --sync package=package_name_here
 sudo ./restore -v --sync package=package_name_here
 ```
 ---
-#### Dry Run
+### Dry Run
 Makes pacman do a dry run, to test a command without changing anything.
 ```sh
 #Might not always work properly due to pacman being funky.
